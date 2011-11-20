@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <link href="../css/app.css" media="only screen" rel="stylesheet"/>
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width: 480px)" href="../css/iphone.css"/>
+    <link type="text/css" rel="stylesheet"
+          media="only screen and (min-device-width: 768px) and (max-device-width: 1024px)" href="../css/ipad.css"/>
+    <script type="text/javascript" src="../javascripts/zepto.min.js"></script>
+    <title>Policy Search</title>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //var isTouch =  ('createTouch' in document) ? 'touch' : 'click';
+            var isTouch = ('createTouch' in document) ? true : false;
+
+            if (!isTouch) {
+                $('#search').click(function () {
+                    alert('mouse click');
+                });
+
+            }
+
+            if (isTouch) {
+                $('#search').tap(function () {
+                    alert('Touch event TAP invoked');
+                });
+            }
+        })
+    </script>
+</head>
+
+<body>
+
+<div class="container">
+    <h4>Search Policies</h4>
+
+    <div class="detailsViewField">
+        <span class="label">Search Criteria: </span>
+    <span><select>
+        <option>Select</option>
+        <option>Client Name</option>
+        <option>Agent Name</option>
+    </select></span>
+    </div>
+    <div class="detailsViewField">
+        <span class="label">Search Value: </span>
+        <span><input type="text"></span>
+    </div>
+
+    <div class="footer">
+        <button id="search">Search</button>
+        <button id="clear">Clear</button>
+    </div>
+</div>
+
+</body>
+</html>
